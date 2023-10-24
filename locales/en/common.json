@@ -1,0 +1,54 @@
+{
+  "menu": {
+    "reel": "Showreel",
+    "about": "About",
+    "works": "Projects",
+    "team": "Team",
+    "clients": "Clients",
+    "contacts": "Contacts"
+  },
+  "button": {
+    "play": "Play reel",
+    "stop": "Stop reel",
+    "download_reel": "Download showreel",
+    "download_document": "Download the presentation about the studio"
+  },
+  "about": {
+    "header": "About",
+    "description_studio": "AdService is one of the largest computer graphics, duplication and post-production studios. The permanent staff numbers over 70 people and the offices are located in Dubai and Moscow. The studio was founded in 2012. \nWe implement more than 500 projects a year, hold leading positions on the market, and provide services to the largest international and local companies.",
+    "subheader1": "The computer graphics studio",
+    "text1": "production of integrated 3D graphics,\ndesign of characters and animation,\nmotion graphics,\nproduction of static KV",
+    "subheader2": "The 2D and duplication studio",
+    "text2": "preparation of videos to fit different formats, preparation of resizes,\n production of animatics",
+    "subheader3": "The post-production studio",
+    "text3": "video editing, sound design, \ncolor correction, any kind of rights buyout"
+  },
+  "projects": {
+    "header": "Projects"
+  },
+  "team": {
+    "header": "Team",
+    "description": "Adservice constantly searches for new talents. We are  looking for computer graphics artists, art directors, editors, illustrators and producers.",
+    "alex_name": "Alexey Al-Nashi",
+    "kristina_name": "Kristina Shtil",
+    "ivan_name": "Ivan Tiunov",
+    "anna_name": "Anna Plate",
+    "alex_role": "General Producer",
+    "kristina_role": "Postproduction Director",
+    "ivan_role": "Head of CG",
+    "anna_role": "HR Director"
+  },
+  "clients": {
+    "header": "Clients",
+    "agency": "AGENCIES",
+    "prod": "PRODUCTIONS",
+    "brands": "BRANDS"
+  },
+  "contacts": {
+    "header": "Contacts",
+    "moscow": "Moscow",
+    "moscow_address": "Naprudny Lane, 10, building\n1,Moscow, 129110\n+7 495 909-86-70\nhello@adspro.tv",
+    "dubai": "Dubai",
+    "dubai_address": "office 910  Grosvenor\nBuisness Tower,\nBarsha Heights, Dubai,\nPO Box 214 950\n+971 (040) 375 3864"
+  }
+}

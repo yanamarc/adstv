@@ -1,0 +1,440 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>ADS</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#fafafa"/>
+    <!-- Place favicon.ico in the root directory -->
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content=""/>
+    <!-- styles -->
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/slider.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <!-- js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="js/slider.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<header>
+    <div class="header_wrapper">
+        <img src="img/icons/logo.svg" class="header_logo"/>
+        <div class="open_menu" onclick=openMenuMobile()>
+            <img src="img/icons/hamburger-menu.svg"/>
+        </div>
+            <ul class="menu">
+                <button onclick=closeMenuMobile() class="close_menu">
+                    <img src="img/icons/close_btn.svg"/>
+                </button>
+                <li onclick=handleMenuItem("#video") class="menu_item menu_item_active" data-id="#video"><a href="#video">Showreel</a></li>
+                <li onclick=handleMenuItem("#about") class="menu_item" data-id="#about"><a href="#about">О нас</a></li>
+                <li onclick=handleMenuItem("#works") class="menu_item" data-id="#works"><a href="#works">Работы</a></li>
+                <li onclick=handleMenuItem("#team") class="menu_item" data-id="#team"><a href="#team">Команда</a></li>
+                <li onclick=handleMenuItem("#clients") class="menu_item" data-id="#clients"><a href="#clients">Клиенты</a></li>
+                <li onclick=handleMenuItem("#contacts") class="menu_item" data-id="#contacts"><a href="#contacts">Контакты</a></li>
+            </ul>
+        <div class="language_switcher">
+            <button id="ru" onclick="toggleRULanguage()" value="ru">RU</button>
+            <button id="en" onclick="toggleENLanguage()" value="en">EN</button>
+        </div>
+    </div>
+</header>
+<main>
+    <!--video-->
+    <section id="video" class="video_content">
+        <video autoplay muted loop id="main_reel" preload="auto">
+            <source src="video/main_reel.mp4" type="video/mp4"/>
+        </video>
+        <div class="reel_desc">
+            <div>
+                <p class="reel_desc_text">Showreel</br>2023</p>
+            </div>
+            <div class="reel_footer">
+                <div class="reel_footer_btn">
+                    <button class="btn_icon" onclick="toggleMainReel()" id="play">
+                        <img src="img/icons/mute.svg">
+                        <img src="img/icons/mute.svg">
+                    </button>
+                    <button class="btn_icon" onclick="toggleMainReel()" id="pause">
+                        <img src="img/icons/unmute.svg">
+                        <img src="img/icons/unmute.svg">
+                    </button>
+                    <a href="video/main_reel.mp4" download="reel_2023" target="_blank" class="link">
+                        <img src="img/icons/download.svg" class="icon_white">
+                        <img src="img/icons/download_hover_white.svg" class="icon_white">
+                        <p class="white">Скачать showreel</p>
+                    </a>
+                </div>
+                <div class="reel_footer_lions">
+                    <div class="lion">
+                        <img src="img/icons/lion_gold.svg">
+                        <img src="img/icons/2_gold.svg">
+                    </div>
+                    <div class="lion">
+                        <img src="img/icons/lion_silver.svg">
+                        <img src="img/icons/6_silver.svg">
+                    </div>
+                    <div class="lion">
+                        <img src="img/icons/lion_bronze.svg">
+                        <img src="img/icons/12_bronze.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--about-->
+    <section id="about" class="block_wrapper">
+        <h1 class="header blue">О нас</h1>
+        <div class="about_us">
+            <div>
+                <h2 class="subheader">AdService – одни из крупнейших студий компьютерной графики, тиражирования
+                    и постпродакшна с постоянным штатом более 70 человек и офисами в Москве и Дубае. Основана в 2012
+                    году. Реализуем более 500 проектов каждый год, занимаем лидирующие позиции на рынке, обслуживаем
+                    крупнейшие международные и локальные компании.</h2>
+            </div>
+            <div class="about_us_features">
+                <div>
+                    <h2 class="subheader">Компьютерная графика</h2>
+                    <p class="text">создание комплексной 3Д графики, разработка персонажей и персонажная анимация, моушн графика
+                        создание статичных КВ</p>
+                </div>
+                <div>
+                    <h2 class="subheader">2D и тиражирование</h2>
+                    <p class="text">подготовка видео под различные форматы, подготовка ресайзов создание аниматиков</p>
+                </div>
+                <div>
+                    <h2 class="subheader">Постпродакшен</h2>
+                    <p class="text">монтаж, работа со звуком, цветокоррекция, выкуп любых видов прав</p>
+                </div>
+            </div>
+        </div>
+<!--        @TODO download depending on language-->
+        <a href="/presentation/download_ru.pdf" download="presentation_2023" target="_blank" class="link_black">
+           <img src="img/icons/download_black.svg" />
+           <img src="img/icons/download_hover_gray.svg" />
+            <p class="text black">Скачать презентацию о студии</p>
+        </a>
+    </section>
+    <!--slider-->
+    <section id="works">
+        <h1 class="header_slider white">Работы</h1>
+        <div class="swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide winline">
+                        <div class="slickSlide">
+                            <video class="video" data-id="winline">
+                                <source src='video/winline.mp4' type="video/mp4"/>
+                            </video>
+                        </div>
+                        <div class="hovered" onclick=openFullscreen("winline")>
+                            <img src="img/icons/play_video_slider.svg" alt="play"/>
+                            <p>Winline</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide zolla">
+                        <div class="slickSlide">
+                            <video class="video" data-id="zolla">
+                                <source src='video/zolla.mp4' type="video/mp4"/>
+                            </video>
+                        </div>
+                        <div class="hovered" onclick=openFullscreen("zolla")>
+                            <img src="img/icons/play_video_slider.svg" alt="play"/>
+                            <p>zolla</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide beeline">
+                        <div class="slickSlide">
+                            <video class="video" data-id="beeline">
+                                <source src='video/beeline.mp4' type="video/mp4"/>
+                            </video>
+                        </div>
+                        <div class="hovered" onclick=openFullscreen("beeline")>
+                            <img src="img/icons/play_video_slider.svg" alt="play"/>
+                            <p>beeline</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide tochka">
+                        <div class="slickSlide">
+                            <video class="video" data-id="tochka">
+                                <source src='video/tochka.mp4' type="video/mp4"/>
+                            </video>
+                        </div>
+                        <div class="hovered" onclick=openFullscreen("tochka")>
+                            <img src="img/icons/play_video_slider.svg" alt="play"/>
+                            <p>ТОЧКА БАНК</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide american">
+                        <div class="slickSlide">
+                            <video class="video" data-id="american">
+                                <source src='video/american.mp4' type="video/mp4"/>
+                            </video>
+                        </div>
+                        <div class="hovered" onclick=openFullscreen("american")>
+                            <img src="img/icons/play_video_slider.svg" alt="play"/>
+                            <p>AMERICANA XTREME</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ozon">
+                        <div class="slickSlide">
+                            <video class="video" data-id="ozon">
+                                <source src='video/ozon.mp4' type="video/mp4"/>
+                            </video>
+                        </div>
+                        <div class="hovered" onclick=openFullscreen("ozon")>
+                            <img src="img/icons/play_video_slider.svg" alt="play"/>
+                            <p>ozon</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide tele2">
+                        <div class="slickSlide">
+                            <video class="video" data-id="tele2">
+                                <source src='video/tele2.mp4' type="video/mp4"/>
+                            </video>
+                        </div>
+                        <div class="hovered" onclick=openFullscreen("tele2")>
+                            <img src="img/icons/play_video_slider.svg" alt="play"/>
+                            <p>tele2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </section>
+    <!--team-->
+    <section id="team" class="block_team">
+        <video autoPlay loop muted>
+            <source src='/video/team_reel.mp4' type="video/mp4"/>
+        </video>
+        <div class="block_team_wr">
+            <h1 class="header blue">Команда</h1>
+            <div class="block_team_container">
+                <div>
+                    <h3 class="subheader_small">
+                        Adservice постоянно находится в поиске талантов. Нас интересуют талантливые художники
+                        компьютерной графики, супервайзеры, арт-директора, монтажеры, иллюстраторы и продюсеры.
+                    </h3>
+                </div>
+                <div class="block_team_members">
+                    <div>
+                        <h3 class="subheader_small">Алексей Аль-Наши</h3>
+                        <p class="team_members_role">Генеральный продюсер</br>Alexey@adspro.tv</p>
+                    </div>
+                    <div>
+                        <h3 class="subheader_small">Кристина Штиль</h3>
+                        <p class="team_members_role">Пост продакшн директор</br>ShtilK@adspro.tv</p>
+                    </div>
+                    <div>
+                        <h3 class="subheader_small">Иван Тиунов</h3>
+                        <p class="team_members_role">Head of CG</br>Ivan@adspro.tv</p>
+                    </div>
+                    <div>
+                        <h3 class="subheader_small">Анна Плате </h3>
+                        <p class="team_members_role">HR директор</br>PlateA@adspro.tv</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- clients -->
+    <section id="clients" class="block-clients block_wrapper">
+        <h1 class="header blue">Клиенты</h1>
+        <div>
+            <h3 class="subheader_small black">Агенства</h3>
+            <div class="clients_logo_container">
+                <img src="img/clients/agency/Logo1.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo2.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo3.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo4.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo5.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo6.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo7.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo8.svg" class="clients_logo b-t"/>
+                <img src="img/clients/agency/Logo9.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo10.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo11.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo12.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo13.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo14.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo15.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo16.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo17.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo18.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo19.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo20.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo21.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo22.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo23.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo24.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo25.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo26.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo27.svg" class="clients_logo"/>
+                <img src="img/clients/agency/Logo28.svg" class="clients_logo"/>
+            </div>
+        </div>
+        <div>
+            <h3 class="subheader_small black">Продакшены</h3>
+            <div class="clients_logo_container">
+                <img src="img/clients/production/Logo29.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo30.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo31.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo32.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo33.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo34.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo35.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo36.svg" class="clients_logo b-t"/>
+                <img src="img/clients/production/Logo37.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo38.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo39.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo40.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo41.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo42.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo43.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo44.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo45.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo46.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo47.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo48.svg" class="clients_logo"/>
+                <img src="img/clients/production/Logo49.svg" class="clients_logo"/>
+            </div>
+        </div>
+        <div>
+            <h3 class="subheader_small black">Бренды</h3>
+            <div class="clients_logo_container">
+                <img src="img/clients/brands/Logo51.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo52.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo53.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo54.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo55.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo56.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo57.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo58.svg" class="clients_logo b-t"/>
+                <img src="img/clients/brands/Logo59.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo60.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo61.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo62.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo63.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo64.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo65.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo66.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo67.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo68.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo69.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo70.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo71.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo72.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo73.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo74.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo75.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo76.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo77.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo78.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo79.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo80.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo81.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo82.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo83.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo84.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo85.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo86.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo87.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo88.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo89.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo90.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo91.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo92.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo93.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo94.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo95.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo96.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo97.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo98.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo99.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo100.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo101.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo102.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo103.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo104.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo105.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo106.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo107.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo108.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo109.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo110.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo111.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo112.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo113.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo114.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo115.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo116.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo117.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo118.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo119.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo120.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo121.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo122.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo123.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo124.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo125.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo126.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo127.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo128.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo129.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo130.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo131.svg" class="clients_logo"/>
+                <img src="img/clients/brands/Logo132.svg" class="clients_logo"/>
+            </div>
+        </div>
+    </section>
+    <!-- contacts -->
+    <section id="contacts" class="block_contacts">
+        <div class="block_wrapper">
+            <h1 class="header blue">Контакты</h1>
+            <div class="wrap_location">
+                <div class="moscow_location">
+                    <div class="location_position">
+                        <img src="img/icons/location_pointer.svg" />
+                        <div>
+                            <p class="city">Москва</p>
+                            <p class="address">129110, Напрудный переулок 10с1</br>+7 495 909-86-70</br></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dubai_location">
+                    <div class="location_position">
+                        <img src="img/icons/location_pointer.svg" />
+                        <div>
+                            <p class="city">Дубай</p>
+                            <p class="address">office 910 Grosvenor</br>Buisness Tower,</br>Barsha Heights, Dubai,</br>PO Box 214 950</br>+971 (040) 375 3864</br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script>
+    document.querySelectorAll('.video').forEach((video) => {
+        video.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreen) {
+                video.pause()
+            } else {
+                video.classList.add("fullscreen")
+                video.play()
+                video.requestFullscreen() || video.webkitRequestFullscreen() || video.msRequestFullscreen();
+            }
+        })
+    })
+</script>
+</body>
+</html>
