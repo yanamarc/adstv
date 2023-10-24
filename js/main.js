@@ -44,28 +44,16 @@ const toggleMainReel = () => {
         if (document.getElementById('play').style.display == 'none') {
             document.getElementById('play').style.display = 'flex';
             document.getElementById('pause').style.display = 'none';
-          console.log("1 play")
             video.muted = true;
         } else {
             document.getElementById('play').style.display = 'none';
             document.getElementById('pause').style.display = 'flex';
-        console.log("2 pause")
             if(video.muted === true){
                 video.muted = false;
             }
         }
     }
 }
-
-// const toggleMute = () => {
-//     const video = document.getElementById("main_reel")
-//     if (video.muted === true) {
-//         video.muted = false;
-//     } else {
-//         video.muted = true;
-//     }
-// }
-
 
 
 
